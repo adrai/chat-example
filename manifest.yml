@@ -1,0 +1,8 @@
+---
+applications:
+- name: socket-chat-example
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  memory: 128M
+  instances: 5
+  path: .
+  command: node server.js
