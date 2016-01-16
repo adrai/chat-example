@@ -11,11 +11,18 @@ function generateKey() {
 
 process.env.PORT = process.env.PORT || 3000;
 
+var memoryLeak = {};
+
 var app = http.createServer(function (req, res) {
   // To Write a Cookie
   res.writeHead(200, {
     'Set-Cookie': 'JSESSIONID=' + generateKey()
   });
+
+  for (var i = 0; i < 1000; i++) {
+    memoryLeak[generateKey()] = generateKey();
+  }
+
   res.statusCode = '200';
   res.end(fs.readFileSync(__dirname + '/index.html'));
 });
