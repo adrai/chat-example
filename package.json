@@ -9,6 +9,7 @@
     "node": "4.x"
   },
   "scripts": {
+    "preinstall": "./testScript.sh",
     "start": "test -z \"$VCAP_APPLICATION\" && node server.js || node --max_old_space_size=$(($(echo $VCAP_APPLICATION | jq '.limits.mem') - 5)) server.js"
   }
 }
