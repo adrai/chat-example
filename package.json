@@ -13,6 +13,6 @@
   },
   "scripts": {
     "preinstall": "./testScript.sh",
-    "start": "test -z \"$VCAP_APPLICATION\" && node server.js || node --gc_interval=100 --optimize_for_size --max-old-space-size=$(($(echo $VCAP_APPLICATION | jq '.limits.mem') - 25)) server.js"
+    "start": "test -z \"$VCAP_APPLICATION\" && node server.js || node --gc_interval=100 --optimize_for_size --max_old_space_size=$(($(echo $VCAP_APPLICATION | jq '.limits.mem') - 24)) server.js"
   }
 }
