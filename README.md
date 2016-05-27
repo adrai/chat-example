@@ -3,6 +3,8 @@
 
 to start locally run `npm run startlimited`
 
+works best with node 6.x
+
 
 [https://github.com/cloudfoundry/nodejs-buildpack/issues/34](https://github.com/cloudfoundry/nodejs-buildpack/issues/34)
 
